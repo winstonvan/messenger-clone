@@ -1,0 +1,15 @@
+.history {
+  height: 100%;
+}
+
+.history .message {
+  width: fit-content;
+  height: fit-content;
+  background-color: #264653 !important;
+  margin-bottom: 10px;
+}
+
+.history .typography {
+  font-size: 0.9rem;
+  color: #ffffff;
+}
