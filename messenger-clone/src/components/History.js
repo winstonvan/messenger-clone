@@ -1,17 +1,16 @@
 import React from "react";
 import "../styles/History.css";
-import { Card, CardActions, CardContent, Typography } from "@material-ui/core";
+import { Card, CardContent, Typography } from "@material-ui/core";
 
 function History(props) {
   return (
     <div className="history">
+      <div className="username">Winston Van</div>
       <Card
         className="message"
-        variant="raised"
         style={{
-          borderRadius: "0.9em",
           width: "fit-content",
-          height: "fit-ceontent",
+          height: "fit-content",
         }}
       >
         <CardContent

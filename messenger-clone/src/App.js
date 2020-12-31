@@ -1,14 +1,9 @@
 import "./App.css";
+import Header from "./components/Header";
 import History from "./components/History";
-import React, { useState } from "react";
-import {
-  Button,
-  FormControl,
-  Input,
-  InputLabel,
-  IconButton,
-} from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
+import React, { useState } from "react";
+import { FormControl, Input, InputLabel, IconButton } from "@material-ui/core";
 
 function App() {
   // states
@@ -29,42 +24,53 @@ function App() {
 
   return (
     <div className="App">
-      {/* MESSAGE HISTORY */}
-
-      <div className="message__history">
-        {messages.map((
-          message //"message" variable is used to map all strings in "messages" array
-        ) => (
-          <History value={message} />
-        ))}
+      <div className="header__container">
+        <Header />
       </div>
 
-      {/* FORM */}
-      <form className="form">
-        <FormControl className="form__control">
-          <InputLabel className="label">Aa</InputLabel>
-          <Input
-            className="input"
-            value={input}
-            onChange={(event) => {
-              setInputField(event, input);
-            }}
-          />
-          <IconButton
-            size="small"
-            variant="contained"
-            disabled={!input}
-            type="submit"
-            onClick={sendMessage}
-            className="icon"
-            style={{
-              borderRadius: 0,
-            }}
-          >
-            <SendIcon />
-          </IconButton>
-        </FormControl>
-      </form>
+      <div className="messages__container">
+        <div className="messages">
+          {/* MESSAGE HISTORY */}
+          <div className="message__history">
+            {messages.map((
+              message //"message" variable is used to map all strings in "messages" array
+            ) => (
+              <History value={message} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="form__container">
+        {/* FORM */}
+        <form className="form">
+          <FormControl className="form__control">
+            <InputLabel className="label" style={{ color: "#264653" }}>
+              Aa
+            </InputLabel>
+            <Input
+              className="input"
+              value={input}
+              onChange={(event) => {
+                setInputField(event, input);
+              }}
+            />
+            <IconButton
+              size="small"
+              variant="contained"
+              disabled={!input}
+              type="submit"
+              onClick={sendMessage}
+              className="icon"
+              style={{
+                borderRadius: 0,
+              }}
+            >
+              <SendIcon />
+            </IconButton>
+          </FormControl>
+        </form>
+      </div>
     </div>
   );
 }

@@ -1,5 +1,12 @@
+@import "Global.css";
+
 .history {
   height: 100%;
+}
+
+.history .username {
+  text-align: left;
+  font-size: 0.7rem;
 }
 
 .history .message {
