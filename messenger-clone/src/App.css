@@ -7,17 +7,30 @@
 
 .header__container {
   background-color: #ffffff;
-  height: 10vh;
-  margin: 0% 30%;
-  text-align: center;
+  margin: 1% 30%;
+  padding: 5px 5px;
   display: flex;
-  padding: 20px;
-  margin-bottom: 25px;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible;
+}
+
+.header__container .title {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 2;
+  letter-spacing: 1px;
+  margin-top: -15px;
+}
+
+.header__container .developer {
+  font-size: 0.7rem;
+  font-style: italic;
 }
 
 .messages__container {
   background-color: #ffffff;
-  height: 75vh;
+  height: 70vh;
   margin: 0% 30%;
   text-align: center;
   overflow-y: scroll;
@@ -26,11 +39,11 @@
   padding: 20px;
 }
 
-.form {
+.form__container .form {
   margin-bottom: 10px;
   padding: 20px;
   position: fixed;
-  bottom: 0;
+  bottom: 1%;
   left: 50%;
   transform: translate(-50%, 0);
   z-index: 1;
@@ -38,12 +51,12 @@
   background-color: #ffffff;
 }
 
-.input {
+.form__container .input {
   flex: 1;
   margin-right: 5px;
 }
 
-.form__control {
+.form__container .form__control {
   display: flex !important;
   flex-direction: row !important;
 }

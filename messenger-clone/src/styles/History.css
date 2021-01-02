@@ -1,22 +1,46 @@
 @import "Global.css";
 
 .history {
-  height: 100%;
-}
-
-.history .username {
-  text-align: left;
   font-size: 0.7rem;
 }
 
 .history .message {
   width: fit-content;
   height: fit-content;
-  background-color: #264653 !important;
+  background-color: #264653;
   margin-bottom: 10px;
+}
+
+.history .message__other {
+  width: fit-content;
+  height: fit-content;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.history .username {
+  text-align: right;
+}
+
+.history .username__other {
+  text-align: left;
+}
+
+.history .content {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.history .content {
+  background-color: #ffffff;
 }
 
 .history .typography {
   font-size: 0.9rem;
   color: #ffffff;
+}
+
+.history .typography__other {
+  font-size: 0.9rem;
+  color: #000000;
 }

@@ -1,11 +1,13 @@
 import "./App.css";
-import Header from "./components/Header";
+import db from "./components/Database";
 import History from "./components/History";
 import SendIcon from "@material-ui/icons/Send";
 import React, { useState } from "react";
 import { FormControl, Input, InputLabel, IconButton } from "@material-ui/core";
 
 function App() {
+  const username = "Winston";
+
   // states
   const [input, setInput] = useState(""); // text field state
   const [messages, setMessages] = useState([]); // messages state stored in an array
@@ -22,10 +24,21 @@ function App() {
     setInput(""); // clear text field
   };
 
+  const send = (event) => {
+    event.preventDefault();
+
+    db.collection("users").add({
+      loginInfo: "hi",
+    });
+  };
+
   return (
     <div className="App">
       <div className="header__container">
-        <Header />
+        <div className="content">
+          <div className="title">Chat</div>
+        </div>
+        <div className="developer">Developed by Winston Van</div>
       </div>
 
       <div className="messages__container">
@@ -35,7 +48,7 @@ function App() {
             {messages.map((
               message //"message" variable is used to map all strings in "messages" array
             ) => (
-              <History value={message} />
+              <History username={username} message={message} />
             ))}
           </div>
         </div>
@@ -60,7 +73,7 @@ function App() {
               variant="contained"
               disabled={!input}
               type="submit"
-              onClick={sendMessage}
+              onClick={send}
               className="icon"
               style={{
                 borderRadius: 0,
