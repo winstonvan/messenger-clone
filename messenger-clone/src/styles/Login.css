@@ -1,0 +1,36 @@
+@import "Global.css";
+
+.login__container {
+  background-color: #ffffff;
+  margin: 15% 40%;
+  padding: 10px 30px 30px 30px;
+  border-radius: 5px;
+}
+
+.login__title {
+  line-height: 1.5;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+.login__container .login {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.login__container .submit {
+  margin-top: 20px;
+  width: 25%;
+  background-color: #264653;
+  text-transform: capitalize;
+}
+
+.login__container .error {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: red;
+  font-weight: 500;
+  display: none;
+}

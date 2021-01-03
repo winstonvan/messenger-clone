@@ -27,7 +27,7 @@ function App() {
   const send = (event) => {
     event.preventDefault();
 
-    db.collection("users").add({
+    db.collection("users").doc("loginInfo").add({
       loginInfo: "hi",
     });
   };
@@ -73,7 +73,7 @@ function App() {
               variant="contained"
               disabled={!input}
               type="submit"
-              onClick={send}
+              onClick={sendMessage}
               className="icon"
               style={{
                 borderRadius: 0,
