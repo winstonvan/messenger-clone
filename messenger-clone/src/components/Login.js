@@ -1,16 +1,17 @@
 import "../styles/Login.css";
 import { TextField, Button } from "@material-ui/core";
 import { useState } from "react";
+
 import "firebase/auth";
 import db from "../components/Database";
 
 // login / create user
 
-function Login() {
+function Login(props) {
   const [username, setUsername] = useState(""); // username field state
   const [password, setPassword] = useState(""); // password field state
 
-  // set username field
+  // set username fieldz
   const setUsernameField = (event) => {
     setUsername(event.currentTarget.value);
   };
@@ -20,40 +21,62 @@ function Login() {
     setPassword(event.currentTarget.value);
   };
 
-  const StartLogin = (event) => {
-    console.log("Disabling refresh");
+  const register = (event) => {
+    db.collection("users").add({
+      username: { username },
+      password: { password },
+    });
+
+    return;
+  };
+
+  const login = (event) => {
+    props.history.push({
+      pathname: "/chat",
+      state: { username: username },
+    });
+  };
+
+  const startLogin = (event) => {
     event.preventDefault(); // prevent refreshing
+    const postData = [];
 
-    // check if user exists
+    // push database data to postData[]
     db.collection("users").onSnapshot((snapshot) => {
-      console.log("Checking if user exists");
-
-      const postData = [];
       snapshot.forEach((doc) => postData.push({ ...doc.data() }));
+    });
 
-      console.log("Searching database for: " + username);
+    setTimeout(function () {
+      console.clear();
+      console.log(postData);
+      console.log(
+        "Searching database(" + postData.length + ") for: " + username
+      );
+
+      // find user/pass combination in postData[]
       for (var i = 0; i < postData.length; i++) {
-        let user = postData[i].username.username;
-        let pass = postData[i].password.password;
+        var user = postData[i].username.username;
+        var pass = postData[i].password.password;
 
-        console.log(user);
-        console.log(pass);
         if (user === username) {
           console.log("Found matching username. Checking password...");
 
           if (pass === password) {
-            console.log("Password matches. User exists.");
-
+            console.log("Password matches.");
+            login();
             return;
+          } else {
+            console.log("Password does not match.");
           }
-        }
-
-        if (i === postData.length - 1) {
+        } else if (i === postData.length - 1) {
           console.log("User does not exist");
-          // if user doesn't exist
+          register();
+        } else {
+          console.log("Username doesn't match. Trying next...");
         }
+        console.log("______________________");
       }
-    });
+    }, 2000);
   };
 
   return (
@@ -82,7 +105,7 @@ function Login() {
             className="submit"
             variant="contained"
             color="primary"
-            onClick={(event) => StartLogin(event)}
+            onClick={(event) => startLogin(event)}
           >
             Login
           </Button>
