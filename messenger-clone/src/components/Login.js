@@ -11,7 +11,7 @@ function Login(props) {
   const [username, setUsername] = useState(""); // username field state
   const [password, setPassword] = useState(""); // password field state
 
-  // set username fieldz
+  // set username field
   const setUsernameField = (event) => {
     setUsername(event.currentTarget.value);
   };
@@ -49,9 +49,17 @@ function Login(props) {
     setTimeout(function () {
       console.clear();
       console.log(postData);
+
       console.log(
         "Searching database(" + postData.length + ") for: " + username
       );
+
+      if (postData.length === 0) {
+        console.log("No accounts in database. Registering account.");
+        register();
+        login();
+        return;
+      }
 
       // find user/pass combination in postData[]
       for (var i = 0; i < postData.length; i++) {
@@ -69,14 +77,16 @@ function Login(props) {
             console.log("Password does not match.");
           }
         } else if (i === postData.length - 1) {
-          console.log("User does not exist");
+          console.log("User does not exist. Registering account.");
           register();
+          login();
+          return;
         } else {
           console.log("Username doesn't match. Trying next...");
         }
         console.log("______________________");
       }
-    }, 2000);
+    }, 1000);
   };
 
   return (
