@@ -121,6 +121,10 @@ function Login(props) {
           </Button>
         </div>
       </form>
+
+      <div className="instructions">
+        Login using any unused login credentials to register an account.
+      </div>
     </div>
   );
 }
