@@ -3,14 +3,18 @@ import "../styles/History.css";
 import { Card, CardContent, Typography } from "@material-ui/core";
 
 function History({ username, message }) {
+  const isUser = username === message.username;
+
+  console.log(username);
+  console.log({ message }.username);
   return (
     <div className="history">
-      <div className={username === "123" ? "username" : "username__other"}>
+      <div className={isUser === true ? "username" : "username__other"}>
         {username}
       </div>
-      <div className={username === "123" ? "content" : "content__other"}>
+      <div className={isUser === true ? "content" : "content__other"}>
         <Card
-          className={username === "123" ? "message" : "message__other"}
+          className={isUser === true ? "message" : "message__other"}
           style={{
             width: "fit-content",
             height: "fit-content",
@@ -26,9 +30,7 @@ function History({ username, message }) {
             }}
           >
             <Typography
-              className={
-                username === "123" ? `typography` : `typography__other`
-              }
+              className={isUser === true ? `typography` : `typography__other`}
               variant="h5"
               component="h2"
               color="white"

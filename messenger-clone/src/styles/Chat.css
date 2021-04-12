@@ -34,9 +34,14 @@
   margin: 0% 30%;
   text-align: center;
   overflow-y: scroll;
+  padding: 20px;
+  display: flex;
+  flex-direction: column-reverse; /* Change chat direction  */
+}
+
+.message__history {
   display: flex;
   flex-direction: column-reverse; /* Reverse for auto scroll */
-  padding: 20px;
 }
 
 .form__container .form {

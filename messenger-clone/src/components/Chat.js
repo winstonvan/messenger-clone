@@ -11,7 +11,7 @@ function Chat(props) {
   const username = props.location.state.username;
 
   // states
-  const [input, setInput] = useState(""); // text field state
+  const [input, setInput] = useState(""); // text field
   const [messages, setMessages] = useState([{ username: "", message: "" }]); // messages state stored in an array
 
   // populate chat
@@ -20,7 +20,10 @@ function Chat(props) {
       .orderBy("timestamp", "desc")
       .onSnapshot((snapshot) => {
         setMessages(
-          snapshot.docs.map((doc) => ({ id: doc.id, message: doc.data() }))
+          snapshot.docs.map((doc) => ({
+            id: doc.id,
+            message: doc.data().message,
+          }))
         );
       });
   }, []);
@@ -48,15 +51,13 @@ function Chat(props) {
       </div>
 
       <div className="messages__container">
-        <div className="messages">
-          {/* MESSAGE HISTORY */}
-          <div className="message__history">
-            {messages.map((
-              { id, message } //"message" variable is used to map all strings in "messages" array
-            ) => (
-              <History key={id} username={username} message={message} />
-            ))}
-          </div>
+        {/* MESSAGE HISTORY */}
+        <div className="message__history">
+          {messages.map((
+            { id, message } //"message" variable is used to map all strings in "messages" array
+          ) => (
+            <History key={id} username={username} message={message} />
+          ))}
         </div>
       </div>
 
