@@ -2,11 +2,9 @@ import React from "react";
 import "../styles/History.css";
 import { Card, CardContent, Typography } from "@material-ui/core";
 
-function History({ username, message }) {
-  const isUser = username === message.username;
+function History({ username, message, currentUser }) {
+  const isUser = username === currentUser;
 
-  console.log(username);
-  console.log({ message }.username);
   return (
     <div className="history">
       <div className={isUser === true ? "username" : "username__other"}>

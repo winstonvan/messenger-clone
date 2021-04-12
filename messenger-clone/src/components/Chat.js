@@ -8,7 +8,7 @@ import firebase from "firebase";
 
 function Chat(props) {
   // get username
-  const username = props.location.state.username;
+  const usernameRef = props.location.state.username;
 
   // states
   const [input, setInput] = useState(""); // text field
@@ -22,6 +22,7 @@ function Chat(props) {
         setMessages(
           snapshot.docs.map((doc) => ({
             id: doc.id,
+            username: doc.data().username,
             message: doc.data().message,
           }))
         );
@@ -34,7 +35,7 @@ function Chat(props) {
 
     db.collection("messages").add({
       message: input,
-      username: username,
+      username: usernameRef,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
 
@@ -54,9 +55,14 @@ function Chat(props) {
         {/* MESSAGE HISTORY */}
         <div className="message__history">
           {messages.map((
-            { id, message } //"message" variable is used to map all strings in "messages" array
+            { id, username, message, currentUser } //"message" variable is used to map all strings in "messages" array
           ) => (
-            <History key={id} username={username} message={message} />
+            <History
+              key={id}
+              username={username}
+              message={message}
+              currentUser={usernameRef}
+            />
           ))}
         </div>
       </div>
