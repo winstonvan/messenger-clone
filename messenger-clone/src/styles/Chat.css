@@ -28,6 +28,17 @@
   font-weight: 300;
 }
 
+.header__container .title {
+  font-weight: 0;
+  font-size: 1.5rem;
+}
+
+.header__container .username {
+  font-size: 1.7rem;
+  font-weight: 790;
+  color: #93032e;
+}
+
 .messages__container {
   background-color: #ffffff;
   height: 70vh;
