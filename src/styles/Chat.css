@@ -201,3 +201,72 @@
     width: 90%;
   }
 }
+
+@media screen and (max-width: 1030px) and (max-height: 1370px) {
+  /* iPad Pro*/
+  .messages__container {
+    height: 83.75vh;
+  }
+}
+
+@media screen and (max-width: 770px) and (max-height: 1030px) {
+  /* iPad*/
+  .messages__container {
+    height: 80vh;
+  }
+}
+
+@media screen and (max-width: 550px) and (max-height: 730px) {
+  /* Surface Duo */
+  .messages__container {
+    height: 73.25vh;
+  }
+}
+@media screen and (max-width: 420px) and (max-height: 830px) {
+  /* Pixel 2 XL */
+  .messages__container {
+    height: 76.75vh;
+  }
+}
+
+@media screen and (max-width: 420px) and (max-height: 740px) {
+  /* Pixel 2 / iPhone 6/7/8 Plus  */
+  .messages__container {
+    height: 74.25vh;
+  }
+}
+
+@media screen and (max-width: 380px) and (max-height: 830px) {
+  /* iPhone X*/
+  .messages__container {
+    height: 76.75vh;
+  }
+}
+
+@media screen and (max-width: 380px) and (max-height: 680px) {
+  /* iPhone 6/7/8*/
+  .messages__container {
+    height: 72vh;
+  }
+}
+
+@media screen and (max-width: 370px) and (max-height: 641px) {
+  /* Moto G4 / Galaxy S5*/
+  .messages__container {
+    height: 70.25vh;
+  }
+}
+
+@media screen and (max-width: 321px) and (max-height: 569px) {
+  /* iPhone 5/SE */
+  .messages__container {
+    height: 68.25vh;
+  }
+}
+
+@media screen and (max-width: 281px) and (max-height: 654px) {
+  /* Galaxy Fold */
+  .messages__container {
+    height: 72.75vh;
+  }
+}
