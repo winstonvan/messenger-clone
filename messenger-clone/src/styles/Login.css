@@ -21,13 +21,13 @@
 
 @media screen and (max-width: 630px) {
   .login__container {
-    margin: 30% 25%;
+    margin: 25% 25%;
   }
 }
 
 @media screen and (max-width: 550px) {
   .login__container {
-    margin: 30% 20%;
+    margin: 25% 20%;
   }
 }
 

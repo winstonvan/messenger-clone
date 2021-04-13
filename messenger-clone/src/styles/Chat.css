@@ -39,11 +39,6 @@
   flex-direction: column-reverse; /* Change chat direction  */
 }
 
-.message__history {
-  display: flex;
-  flex-direction: column-reverse; /* Reverse for auto scroll */
-}
-
 .form__container .form {
   margin-bottom: 10px;
   padding: 20px;
@@ -64,4 +59,122 @@
 .form__container .form__control {
   display: flex !important;
   flex-direction: row !important;
+}
+
+.message__history {
+  display: flex;
+  flex-direction: column-reverse; /* Reverse for auto scroll */
+}
+
+@media screen and (max-width: 1080px) {
+  .header__container {
+    padding: 13px;
+    margin: 0% 20%;
+  }
+  .messages__container {
+    margin: 2% 20%;
+    height: 74.75vh;
+  }
+
+  .form__container .form {
+    margin-bottom: 10px;
+    padding: 15px;
+    position: fixed;
+    bottom: 1%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1;
+    width: 60%;
+    background-color: #ffffff;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .header__container {
+    padding: 13px;
+    margin: 0% 15%;
+  }
+  .messages__container {
+    margin: 1.75% 15%;
+    height: 69vh;
+  }
+
+  .form__container .form {
+    margin-bottom: 6px;
+    padding: 15px;
+    position: fixed;
+    bottom: 1%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1;
+    width: 70%;
+    background-color: #ffffff;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .header__container {
+    padding: 13px;
+    margin: 0% 2%;
+  }
+  .messages__container {
+    margin: 2% 2%;
+  }
+
+  .form__container .form {
+    margin-bottom: 3px;
+    padding: 15px;
+    position: fixed;
+    bottom: 1%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1;
+    width: 96%;
+    background-color: #ffffff;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .header__container {
+    padding: 13px;
+    margin: 0% 3%;
+  }
+  .messages__container {
+    margin: 2.5% 3%;
+  }
+
+  .form__container .form {
+    margin-bottom: 1px;
+    padding: 15px;
+    position: fixed;
+    bottom: 1%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1;
+    width: 94%;
+    background-color: #ffffff;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header__container {
+    padding: 13px;
+    margin: 0% 5%;
+  }
+  .messages__container {
+    margin: 4% 5%;
+    height: 60vh;
+  }
+
+  .form__container .form {
+    margin-bottom: 1px;
+    padding: 15px;
+    position: fixed;
+    bottom: 1%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1;
+    width: 90%;
+    background-color: #ffffff;
+  }
 }
