@@ -46,7 +46,7 @@ function Chat(props) {
     <div className="Chat">
       <div className="header__container">
         <div className="content">
-          <div className="title">Chat</div>
+          <div className="title">Welcome, {usernameRef}!</div>
         </div>
         <div className="developer">Developed by Winston Van</div>
       </div>

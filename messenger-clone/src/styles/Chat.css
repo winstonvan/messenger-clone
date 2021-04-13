@@ -13,19 +13,19 @@
   flex-direction: column;
   align-items: center;
   overflow: visible;
+  border-radius: 5px;
 }
 
 .header__container .title {
-  font-size: 2rem;
-  font-weight: 400;
+  font-size: 1.6rem;
+  font-weight: 500;
   line-height: 2;
   letter-spacing: 1px;
-  margin-top: -15px;
 }
 
 .header__container .developer {
-  font-size: 0.7rem;
-  font-style: italic;
+  font-size: 0.6rem;
+  font-weight: 300;
 }
 
 .messages__container {
@@ -37,6 +37,7 @@
   padding: 20px;
   display: flex;
   flex-direction: column-reverse; /* Change chat direction  */
+  border-radius: 5px;
 }
 
 .form__container .form {
@@ -49,6 +50,7 @@
   z-index: 1;
   width: 40%;
   background-color: #ffffff;
+  border-radius: 5px;
 }
 
 .form__container .input {
@@ -67,6 +69,10 @@
 }
 
 @media screen and (max-width: 1080px) {
+  .header__container .title {
+    font-size: 1.5rem;
+  }
+
   .header__container {
     padding: 13px;
     margin: 0% 20%;
@@ -157,6 +163,10 @@
 }
 
 @media screen and (max-width: 480px) {
+  .header__container .title {
+    font-size: 1.2rem;
+  }
+
   .header__container {
     padding: 13px;
     margin: 0% 5%;
